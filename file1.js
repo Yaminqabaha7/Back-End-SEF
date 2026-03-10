@@ -1,64 +1,50 @@
-//////////////////// Lec 2 ////////////////////
+//////////////////// Lec 3 ////////////////////
 
-const validator = require("validator");
+///////////////////////////////////////
+const fs = require("fs");
 
-console.log(validator.isEmail("yamin")); // false
+const yamin = {
+  name: "Yamin",
+  age: 25,
+};
 
-console.log(validator.isEmail("yamin@gmail.com")); // true
+console.log(yamin);
 
-/////////////////////////////////////////////////////////
+const yaminString = JSON.stringify(yamin); /// converts object to string(json format)
 
-console.log(process.argv); // path to node, path to file, arguments
+console.log(yaminString);
 
-console.log(process.argv[2]); // first argument
+const yaminParsed = JSON.parse(yaminString); /// converts string(Json) back to object
+console.log(yaminParsed);
 
-const comm = process.argv[2];
-if (comm === "yamin") {
-  console.log("Welcome Yamin");
-} else if (comm === "sami") {
-  console.log("Welcome Sami");
-} else {
-  console.log("Welcome Guest");
-}
-/////////////////////////////////////////////////////////
+fs.writeFileSync("yamin.json", yaminString); /// writes the string(json) to a file
+
+//////////////////////////////////////////////////////////////
 
 const yargs = require("yargs");
-const { hideBin } = require("yargs/helpers");
+const { hideBin } = require("yargs/helpers");// to hide the first two arguments (node and file name) from the command line arguments
 
 const argv = yargs(hideBin(process.argv));
 
-// argv.command({
-//   command: "add",
-//   describe: "Add a new note",
-//   builder: {
-//     fname: {
-//       describe: "First name",
-//       demandOption: true,
-//     },
-//     lname: {
-//       describe: "Last name",
-//       demandOption: true,
-//     },
-//   },
-//   handler: () => {
-//     console.log("Adding a new note!");
-//   },
-// });
+const Functions = require("./Functions");// to import the functions from the Functions.js file
 
-// argv.parse();
+argv.command({
+  command: "add",
+  describe: "Add a new note",
+  builder: {
+    fname: {
+      describe: "First name",
+      demandOption: true,
+    },
+    lname: {
+      describe: "Last name",
+      demandOption: true,
+    },
+  },
+  handler: (x) =>// the handler function that will be executed when the command is called
+   {
+    Functions.add(x.fname, x.lname, x.age, x.city);
+  },
+});
 
-argv
-  .command({
-    command: "remove",
-    describe: "Remove a note",
-    builder: {
-      id: {
-        describe: "Note ID",
-        demandOption: true,
-      },
-    },
-    handler: () => {
-      console.log("Removing a note!");
-    },
-  })
-  argv.parse();
+console.log(argv.argv); // to parse the command line arguments and execute the corresponding command
