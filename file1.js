@@ -1,19 +1,64 @@
-// /////////////////////////   LEC 1    /////////////////////////////////////////
+//////////////////// Lec 2 ////////////////////
 
-// const fs = require("fs");
+const validator = require("validator");
 
-// fs.writeFileSync("hello.txt", "Hello World");
+console.log(validator.isEmail("yamin")); // false
 
-// //  console.log(fs.readFileSync('hello.txt').toString());
+console.log(validator.isEmail("yamin@gmail.com")); // true
 
-// fs.appendFileSync("hello.txt", "\nHello Again");
+/////////////////////////////////////////////////////////
 
-// console.log(fs.readFileSync("hello.txt").toString());
-// ////////////////////////////////////////////////////////////
-// const file2 = require("./file2");
+console.log(process.argv); // path to node, path to file, arguments
 
-// console.log(file2.x);
+console.log(process.argv[2]); // first argument
 
-// console.log(file2.y);
+const comm = process.argv[2];
+if (comm === "yamin") {
+  console.log("Welcome Yamin");
+} else if (comm === "sami") {
+  console.log("Welcome Sami");
+} else {
+  console.log("Welcome Guest");
+}
+/////////////////////////////////////////////////////////
 
-// //////////////////////////   LEC 2    /////////////////////////////////////////
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
+
+const argv = yargs(hideBin(process.argv));
+
+// argv.command({
+//   command: "add",
+//   describe: "Add a new note",
+//   builder: {
+//     fname: {
+//       describe: "First name",
+//       demandOption: true,
+//     },
+//     lname: {
+//       describe: "Last name",
+//       demandOption: true,
+//     },
+//   },
+//   handler: () => {
+//     console.log("Adding a new note!");
+//   },
+// });
+
+// argv.parse();
+
+argv
+  .command({
+    command: "remove",
+    describe: "Remove a note",
+    builder: {
+      id: {
+        describe: "Note ID",
+        demandOption: true,
+      },
+    },
+    handler: () => {
+      console.log("Removing a note!");
+    },
+  })
+  argv.parse();
