@@ -14,11 +14,9 @@ const forcast = (lanitued, longtude, callback) => {
     } else if (response.body.error) {
       callback(response.body.error.message, undefined);
     } else {
-      callback(
-        undefined,
-        response.body.location.name,
-        response.body.current.condition.text,
-      );
+      callback(undefined, {
+        temperature: response.body.current.temp_c,
+      });
     }
   });
 };
