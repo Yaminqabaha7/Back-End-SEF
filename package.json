@@ -2,7 +2,7 @@
   "name": "lectures",
   "version": "1.0.0",
   "description": "",
-  "main": "file1.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/Yaminqabaha7/Back-End-SEF#readme",
   "dependencies": {
-    "request": "^2.88.2"
+    "express": "^5.2.1"
   }
 }
