@@ -1,5 +1,31 @@
 [
-  { "fname": "yamin", "lname": "rehan", "age": 20, "city": "jenin", "id": 1 },
-  { "fname": "yamin", "lname": "rehan", "age": 20, "city": "jenin", "id": 2 },
-  { "fname": "yamin", "lname": "moyad", "age": 30, "city": "yabad", "id": 3 }
+  { "fname": "yamin", "lname": "qabaha", "age": 20, "city": "jenin", "id": 1 },
+  { "fname": "Ahmad", "lname": "Saleh", "age": 22, "city": "Jenin", "id": 2 },
+  {
+    "fname": "Yousef",
+    "lname": "Khaled",
+    "age": 25,
+    "city": "Nablus",
+    "id": 3
+  },
+  {
+    "fname": "Omar",
+    "lname": "Hassan",
+    "age": 21,
+    "city": "Ramallah",
+    "id": 4
+  },
+  { "fname": "Ali", "lname": "Mahmoud", "age": 24, "city": "Hebron", "id": 5 },
+  { "fname": "Kareem", "lname": "Adel", "age": 23, "city": "Tulkarm", "id": 6 },
+  { "fname": "Samir", "lname": "Fadi", "age": 26, "city": "Qalqilya", "id": 7 },
+  { "fname": "Hadi", "lname": "Rami", "age": 20, "city": "Salfit", "id": 8 },
+  { "fname": "Zaid", "lname": "Anas", "age": 27, "city": "Jericho", "id": 9 },
+  {
+    "fname": "Fadi",
+    "lname": "Nasser",
+    "age": 28,
+    "city": "Bethlehem",
+    "id": 10
+  },
+  { "fname": "Rami", "lname": "Ibrahim", "age": 22, "city": "Jenin", "id": 11 }
 ]

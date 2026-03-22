@@ -1,6 +1,6 @@
-//////////////////// Lec 4 ////////////////////
+//////////////////// Task 1 ////////////////////
 
-///////////////////////////////////////
+
 const fs = require("fs");
 
 const yargs = require("yargs");
@@ -24,11 +24,38 @@ argv.command({
     },
   },
   handler: (
-    x // the handler function that will be executed when the command is called
+    x, // the handler function that will be executed when the command is called
   ) => {
     Functions.add(x.fname, x.lname, x.age, x.city, x.id);
   },
 });
+
+///////////////////////////////////////////////////// reade command //////////////////////////////////////////////////
+argv.command({
+  command: "readedate",
+  describe: "reade a new note",
+  builder: {
+    id: {
+      describe: "ID",
+      demandOption: true,
+    },
+  },
+  handler: (
+    x, // the handler function that will be executed when the command is called
+  ) => {
+    Functions.readedate(x.id);
+  },
+});
+
+argv.command({
+  command: "readAll",
+  describe: "reade all notes",
+
+  handler: () => {
+    Functions.readAll();
+  },
+});
+
 ///////////////////////////////////////////////////// delete command //////////////////////////////////////////////////
 argv.command({
   command: "delete",
@@ -38,43 +65,28 @@ argv.command({
       describe: "ID",
       demandOption: true,
     },
-    // fname: {
-    //   describe: "First name",
-    //   demandOption: true,
-    // }, // to specify the options that the command accepts, it takes an object where the keys are the option names and the values are objects that describe the options, in this case, it has two options: id and fname, where id is not required and fname is required
   },
-  handler: (
-    x // the handler function that will be executed when the command is called
-  ) => {
+  handler: (x) => {
     Functions.delete(x.id);
   },
 });
 
-///////////////////////////////////////////////////// reade command //////////////////////////////////////////////////
 argv.command({
-  command: "reade",
-  describe: "reade a new note",
-  builder: {
-    id: {
-      describe: "ID",
-      demandOption: true,
-    },
-  },
-  handler: (
-    x // the handler function that will be executed when the command is called
-  ) => {
-    Functions.readedate(x.id);
+  command: "deleteAll",
+  describe: "delete all notes",
+  handler: () => {
+    Functions.deleteAll();
   },
 });
 
+
 ////////////////////////////////////////////////////// labled command //////////////////////////////////////////////////
 argv.command({
-  command: "labled",
-  describe: "labled a new note",
-  handler: (
-    x // the handler function that will be executed when the command is called
-  ) => {
-    Functions.labled();
+  command: "readSpecific",
+  describe: "read specific notes",
+  handler: () => {
+    Functions.readSpecific();
   },
 });
+
 argv.argv; // to parse the command line arguments and execute the corresponding command
