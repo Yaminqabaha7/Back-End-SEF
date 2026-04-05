@@ -1,0 +1,26 @@
+{
+  "name": "lectures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaminqabaha7/Back-End-SEF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yaminqabaha7/Back-End-SEF/issues"
+  },
+  "homepage": "https://github.com/Yaminqabaha7/Back-End-SEF#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "hbs": "^4.2.0",
+    "hps": "^1.1.1"
+  }
+}
