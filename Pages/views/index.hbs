@@ -1,15 +1,38 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Weather App</title>
   </head>
   <body>
-    <h2>{{>header}}</h2>
-  
-    <p>Hello, {{name}}!</p>
-   
+    <nav>
+      <a href="/">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/views">Views</a>
+    </nav>
+
+    <div class="container">
+      <div class="weather-card">
+        <h2>{{header}}</h2>
+        <p>Hello, {{name}}! Check the weather in any city.</p>
+
+        <form id="weather-form">
+          <input
+            id="address"
+            type="text"
+            name="address"
+            placeholder="Enter location"
+          />
+          <button type="submit">Get Weather</button>
+        </form>
+
+        <div id="location" class="result-box location-box"></div>
+        <div id="forecast" class="result-box forecast-box"></div>
+        <div id="error" class="result-box error-box"></div>
+      </div>
+    </div>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
